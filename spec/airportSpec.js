@@ -1,9 +1,27 @@
 describe("Airport", function () {
-  var airport = new Airport();
 
-  plane = jasmine.createSpy('plane');
+  var airport;
+
+  beforeEach(function() {
+    airport =  new Airport();
+  });
+
+    plane = jasmine.createSpy('plane');
 
   it('lands a plane', function () {
-    expect(airport.land(plane)).toEqual(plane);
+    airport.land(plane)
+    expect(airport._hanger).toContain(plane);
+  });
+  
+  it('plane takes off', function () {
+    airport.land(plane)
+    airport.takeoff(plane);
+    expect(airport._hanger).not.toContain(plane);
+  });
+  
+  it('confirm plane has taken off', function () {
+    airport.land(plane);
+    airport.takeoff(plane);
+    expect(airport.takenoff(plane)).toEqual(true);
   });
 });
