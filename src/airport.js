@@ -12,10 +12,10 @@ Airport.prototype.takeoff = function (plane) {
 };
 
 Airport.prototype.takenoff = function (plane) {
-    if ( this._hanger.includes(plane)) {
-      return false;
-    } 
-    else {
-      return true;
-    }
+  if (this._hanger.includes(plane)) {
+    return false;
+  }
+  else {
+    return true;
+  }
 };
