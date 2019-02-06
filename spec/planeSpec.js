@@ -1,17 +1,21 @@
 describe('Plane', function() {
 
+  var plane;
+
   beforeEach( function() {
-    var plane = new Plane();
+     plane = new Plane();
   });
 
-  it('becomes beingFlying when it is taked off', function() {
-    plane.takeoff
+  it('is flying when taken off', function() {
+    plane.takeOff();
+    plane.land();
+    plane.takeOff();
     expect(plane._isFlying).toEqual(true);
   });
 
-  xit('stops beingFlying when it is landed', function() {
-    plane.takeoff
-    plane.land
+  it('is not flying when landed', function() {
+    plane.takeOff();
+    plane.land();
     expect(plane._isFlying).toEqual(false);
   });
 

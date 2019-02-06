@@ -1,12 +1,13 @@
 describe("Airport", function () {
 
-//  var airport;
+  var airport;
 
   beforeEach(function () {
     airport = new Airport();
+    plane = jasmine.createSpyObj('plane', ['land', 'takeOff', '_isFlying']);
+    
   });
 
-  plane = jasmine.createSpy('plane');
 
   it('lands a plane', function () {
     airport.land(plane)
@@ -20,6 +21,7 @@ describe("Airport", function () {
   });
 
   it('confirm plane has taken off', function () {
+    plane._isFlying.and.returnValue(true);
     airport.land(plane);
     airport.takeoff(plane);
     expect(airport.isTakenOff(plane)).toEqual(true);
