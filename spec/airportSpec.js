@@ -1,6 +1,6 @@
 describe("Airport", function () {
 
-  var airport;
+//  var airport;
 
   beforeEach(function () {
     airport = new Airport();
@@ -22,6 +22,6 @@ describe("Airport", function () {
   it('confirm plane has taken off', function () {
     airport.land(plane);
     airport.takeoff(plane);
-    expect(airport.takenoff(plane)).toEqual(true);
+    expect(airport.isTakenOff(plane)).toEqual(true);
   });
 });
