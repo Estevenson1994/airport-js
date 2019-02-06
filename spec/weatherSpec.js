@@ -1,20 +1,12 @@
-describe("Weather", function () {
+describe('Weather', function() {
 
-  var weather;
-
-  beforeEach(function () {
+  beforeEach(function() {
     weather = new Weather();
   });
 
-  it 'returns stormy weather', function () {
-
-  }
-
-
-
-
+  describe('isStormy', function() {
+    it('should be type boolean', function() {
+      expect(weather.isStormy).toMatch(/true|false/)
+    });
+  });
 });
-
-
-// var weather = ['stormy', 'sunny', 'sunny', 'sunny'];
-// Math.floor((Math.random() * weather.length))
